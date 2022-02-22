@@ -101,7 +101,7 @@ Parameter | Default | Description
 --------- | ------- | -----------
 selected | "`selected_key`" | String of selected key. For example: {metric: "last_7_days"}
 
-[Table of selected keys](#table-of-selected-keys-for-date-range).
+[Table of selected keys](/api-doc/#table-of-selected-keys-for-date-range).
 
 ### Previous DateRange Parameters
 
@@ -109,7 +109,7 @@ Parameter | Default | Description
 --------- | ------- | -----------
 selected | "`selected_key`" | String of selected key. For example: {metric: "previous"}
 
-[Table of selected keys](#table-of-selected-keys-for-previous-date-range).
+[Table of selected keys](/api-doc/##table-of-selected-keys-for-previous-date-range).
 
 ### Aggregate Parameters
 
@@ -126,7 +126,7 @@ display_fields | [ "`field_key`" ] | String of field name. For example: {display
 lookups| {} | Dictionary of include/exclude key: contains list of ids dimension items; `include` - means that from all data are selected only those id specified in the list, `exclude` - not selected from all data. For example: {include: [ 1, 2, 3 ]}
 on | `on_key` | String of on key. Determines location of the dimension in the table or the axis. `row` - dimension to be in row or X axis, `column` - dimension to be in column or Y axis.
 
-[Table of dimension keys](#table-of-dimension-keys).
+[Table of dimension keys](/api-doc/#table-of-dimension-keys).
 
 ### Filter Parameters
 
