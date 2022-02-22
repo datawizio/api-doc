@@ -9,7 +9,7 @@
             name="description"
             content="Documentation for the Kittn API"
         >
-    <title>API Reference</title>
+    <title>Use an API</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -295,7 +295,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -303,12 +303,9 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo-2b2be017.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -320,18 +317,75 @@
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#query-parameters" class="toc-h2 toc-link" data-title="Query Parameters">Query Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#getting-data" class="toc-h1 toc-link" data-title="Getting data">Getting data</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-2" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#http-header" class="toc-h2 toc-link" data-title="HTTP header">HTTP header</a>
+                  </li>
+                  <li>
+                    <a href="#query-parameters-2" class="toc-h2 toc-link" data-title="Query Parameters">Query Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#daterange-parameters" class="toc-h2 toc-link" data-title="DateRange Parameters">DateRange Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#previous-daterange-parameters" class="toc-h2 toc-link" data-title="Previous DateRange Parameters">Previous DateRange Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#aggregate-parameters" class="toc-h2 toc-link" data-title="Aggregate Parameters">Aggregate Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#groupby-parameters" class="toc-h2 toc-link" data-title="GroupBy Parameters">GroupBy Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#filter-parameters" class="toc-h2 toc-link" data-title="Filter Parameters">Filter Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#option-parameters" class="toc-h2 toc-link" data-title="Option Parameters">Option Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#renderoption-parameters" class="toc-h2 toc-link" data-title="RenderOption Parameters">RenderOption Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#examples-of-getting-a-date" class="toc-h1 toc-link" data-title="Examples of getting a date">Examples of getting a date</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#example-1" class="toc-h2 toc-link" data-title="Example 1">Example 1</a>
+                  </li>
+                  <li>
+                    <a href="#example-2" class="toc-h2 toc-link" data-title="Example 2">Example 2</a>
+                  </li>
+                  <li>
+                    <a href="#example-3" class="toc-h2 toc-link" data-title="Example 3">Example 3</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#tables-of-keys" class="toc-h1 toc-link" data-title="Tables of keys">Tables of keys</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#table-of-selected-keys-for-date-range" class="toc-h2 toc-link" data-title="Table of selected keys for date range">Table of selected keys for date range</a>
+                  </li>
+                  <li>
+                    <a href="#table-of-selected-keys-for-previous-date-range" class="toc-h2 toc-link" data-title="Table of selected keys for previous date range">Table of selected keys for previous date range</a>
+                  </li>
+                  <li>
+                    <a href="#table-of-dimension-keys" class="toc-h2 toc-link" data-title="Table of dimension keys">Table of dimension keys</a>
                   </li>
               </ul>
           </li>
@@ -339,89 +393,63 @@
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>Description of use datawiz API. You need to provide your own BES account information. If you do not have an account, contact the administrator to create one.</p>
 <h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+<p>To begin, you need to get an access token to access the desired application.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://bes.datawiz.io/o/token/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/x-www-form-urlencoded'</span> <span class="se">\</span>
+<span class="nt">--data-urlencode</span> <span class="s1">'client_id=&lt;your_client_id&gt;'</span> <span class="se">\</span>
+<span class="nt">--data-urlencode</span> <span class="s1">'client_secret=&lt;your_client_secret&gt;'</span> <span class="se">\</span>
+<span class="nt">--data-urlencode</span> <span class="s1">'username=&lt;your_email&gt;'</span> <span class="se">\</span>
+<span class="nt">--data-urlencode</span> <span class="s1">'password=&lt;your_password&gt;'</span> <span class="se">\</span>
+<span class="nt">--data-urlencode</span> <span class="s1">'grant_type=password'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accessTokenString"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">36000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read write"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refreshTokenString"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://bes.datawiz.io/o/token/</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
+<p><code>client_id: &lt;your_client_id&gt;</code></p>
+
+<p><code>client_secret: &lt;your_client_secret&gt;</code></p>
+
+<p><code>username: &lt;your_email&gt;</code></p>
+
+<p><code>password: &lt;your_password&gt;</code></p>
+
+<p><code>grant_type: password</code></p>
+
+<aside class="notice"> You must replace <code>&lt;your_client_id&gt;</code> with allowed client_id.
+You must replace <code>&lt;your_client_secret&gt;</code> with allowed client_secret.
+You must replace <code>&lt;your_email&gt;</code> with your personal e-mail address.
+You must replace <code>&lt;your_password&gt;</code> with your personal password.
+</aside>
+
+<p>In the future we will use the obtained <code>token_type</code> and <code>access_token</code> to access the desired application.</p>
+<h1 id='getting-data'>Getting data</h1><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://builder.datawiz.io/api/builder/create-table/</code></p>
+<h3 id='http-header'>HTTP header</h3>
+<p><code>Authorization: &lt;token_type&gt; &lt;access_token&gt;</code></p>
+
+<p><code>client-id: &lt;client_id&gt;</code></p>
+
+<p><code>Content-Type: application/json</code></p>
+
+<aside class="notice"> Not to be confused with <code>&lt;client_id&gt;</code> for authorization. This  <code>&lt;client-id&gt;</code> is number, its value must be provided to you by the administrator.</aside>
+<h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -430,100 +458,828 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>date_range</td>
+<td>{&quot;selected&quot;: &quot;last_7_days&quot;}</td>
+<td>Dictionary of key <code>selected</code>. If choose value <code>date</code> for selected - the data will be sorted for the specified period: {selected: &quot;date&quot;, date_from: &quot;&lt;<code>year_number</code>&gt;-&lt;<code>month_number</code>&gt;-&lt;<code>day_number</code>&gt;&quot;, date_to: &quot;&lt;<code>year_number</code>&gt;-&lt;<code>month_number</code>&gt;-&lt;<code>day_number</code>&gt;&quot;}.</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>prev_date_range</td>
+<td>{&quot;selected&quot;: &quot;previous&quot;}</td>
+<td>Dictionary of key <code>selected</code>. If choose value <code>date</code> for selected - the data will be sorted for the specified period: {selected: &quot;date&quot;, date_from: &quot;&lt;<code>year_number</code>&gt;-&lt;<code>month_number</code>&gt;-&lt;<code>day_number</code>&gt;&quot;, date_to: &quot;&lt;<code>year_number</code>&gt;-&lt;<code>month_number</code>&gt;-&lt;<code>day_number</code>&gt;&quot;}.</td>
+</tr>
+<tr>
+<td>aggregate</td>
+<td>[ ]</td>
+<td>List of dictionary metric keys. Contains desirable metric keys.</td>
+</tr>
+<tr>
+<td>group_by</td>
+<td>[ ]</td>
+<td>List of dictionary with required keys: dimension, display_fields, lookups, on. Contains required info about dimension by which the data must be grouped.</td>
+</tr>
+<tr>
+<td>filters</td>
+<td>[ ]</td>
+<td>List of dictionary with required keys: dimension, lookups. Contains required info about dimension by which the data must be filtered.</td>
+</tr>
+<tr>
+<td>options</td>
+<td>{use_cache: true, fixed_total: true}</td>
+<td>List of dictionary with required keys: use_cache, fixed_total.  Additional keys: expand_tree, with_col_total, with_row_total.</td>
+</tr>
+<tr>
+<td>render_options</td>
+<td>{additional_column_options: {}, clone_data: {name: &quot;chain_<em>name&quot;, has_children: &quot;chain</em>_has_children&quot;}, dtype: &quot;table&quot;, key_start: &quot;chain=&quot;}</td>
+<td>List of dictionary with required keys: additional_column_options, additional_data, clone_data, dtype, key_start.</td>
+</tr>
+</tbody></table>
+<h3 id='daterange-parameters'>DateRange Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>selected</td>
+<td>&quot;<code>selected_key</code>&quot;</td>
+<td>String of selected key. For example: {metric: &quot;last_7_days&quot;}</td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<p><a href="/#table-of-selected-keys-for-date-range">Table of selected keys</a>.</p>
+<h3 id='previous-daterange-parameters'>Previous DateRange Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>selected</td>
+<td>&quot;<code>selected_key</code>&quot;</td>
+<td>String of selected key. For example: {metric: &quot;previous&quot;}</td>
+</tr>
+</tbody></table>
+
+<p><a href="/#table-of-selected-keys-for-previous-date-range">Table of selected keys</a>.</p>
+<h3 id='aggregate-parameters'>Aggregate Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>metric</td>
+<td>&quot;<code>metric_key</code>&quot;</td>
+<td>String of metric key. For example: {metric: &quot;turnover&quot;}</td>
+</tr>
+</tbody></table>
+<h3 id='groupby-parameters'>GroupBy Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dimension</td>
+<td>&quot;<code>dimension_key</code>&quot;</td>
+<td>String of dimension name. For example: {dimension: &quot;category&quot;}</td>
+</tr>
+<tr>
+<td>display_fields</td>
+<td>[ &quot;<code>field_key</code>&quot; ]</td>
+<td>String of field name. For example: {display_fields: [ &quot;name&quot; ]}</td>
+</tr>
+<tr>
+<td>lookups</td>
+<td>{}</td>
+<td>Dictionary of include/exclude key: contains list of ids dimension items; <code>include</code> - means that from all data are selected only those id specified in the list, <code>exclude</code> - not selected from all data. For example: {include: [ 1, 2, 3 ]}</td>
+</tr>
+<tr>
+<td>on</td>
+<td><code>on_key</code></td>
+<td>String of on key. Determines location of the dimension in the table or the axis. <code>row</code> - dimension to be in row or X axis, <code>column</code> - dimension to be in column or Y axis.</td>
+</tr>
+</tbody></table>
+
+<p><a href="/#table-of-dimension-keys">Table of dimension keys</a>.</p>
+<h3 id='filter-parameters'>Filter Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dimension</td>
+<td>&quot;<code>dimension_key</code>&quot;</td>
+<td>String of dimension name. For example: {dimension: &quot;category&quot;}</td>
+</tr>
+<tr>
+<td>lookups</td>
+<td>{}</td>
+<td>Dictionary of include/exclude key: contains list of ids dimension items; <code>include</code> - means that from all data are selected only those id specified in the list, <code>exclude</code> - not selected from all data. For example: {include: [ 1, 2, 3 ]}</td>
+</tr>
+</tbody></table>
+<h3 id='option-parameters'>Option Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>use_cache</td>
+<td>True</td>
+<td>Depending on the value (<code>True</code>/<code>False</code>) - caches/doesn&#39;t cache the received data.</td>
+</tr>
+<tr>
+<td>expand_tree</td>
+<td>False</td>
+<td>indicates roll down of the dimension access.</td>
+</tr>
+<tr>
+<td>with_col_total</td>
+<td>False</td>
+<td>If the dimension is in columns, then for dimension is possible to deduce a line of result having changed <code>with_col_total</code> to True.</td>
+</tr>
+<tr>
+<td>with_row_total</td>
+<td>False</td>
+<td>If the dimension is in rows, then for dimension is possible to deduce a line of result having changed <code>with_row_total</code> to True.</td>
+</tr>
+</tbody></table>
+<h3 id='renderoption-parameters'>RenderOption Parameters</h3>
+<aside class="notice">
+Depending on what you want to get - a table or a chart - the required keys will be different. Enough for the <code>Chart</code>: <code>clone_data</code>, <code>dtype</code>. For the <code>Table</code>: <code>additional_column_options</code>, <code>additional_data</code>, <code>clone_data</code>, <code>dtype</code>, <code>key_start</code>.
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>additional_column_options</td>
+<td>{}</td>
+<td>Column extension information.</td>
+</tr>
+<tr>
+<td>additional_data</td>
+<td>{}</td>
+<td>Additional data about dimension, always its includes existence children info.</td>
+</tr>
+<tr>
+<td>clone_data</td>
+<td>{&quot;name&quot;: &quot;<code>dimension</code>__ name&quot;, &quot;has_children&quot;: &quot;<code>dimension</code>__has_children&quot;&quot;}</td>
+<td>Information about the data you want to copy to another key.</td>
+</tr>
+<tr>
+<td>dtype</td>
+<td>&quot;<code>dtype_key</code>&quot;</td>
+<td>String of dtype key. Indicates the type of visualization, possible dtype_key: <code>table</code>, <code>chart</code>.</td>
+</tr>
+<tr>
+<td>key_start</td>
+<td>&quot; &quot;</td>
+<td>Shows the path of the tree roll down. For example: &quot;shop=1&amp;category=6779&amp;product=&quot;</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
+<h1 id='examples-of-getting-a-date'>Examples of getting a date</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>Example 1
+curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://bi-new.datawiz.io/api/builder/create-table/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer oi1d7vAJMIPFiv2rWT1OlSpCCbA0k2'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'client-id: 313'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "date_range": {
+        "selected": "date",
+        "date_from": "2020-01-01",
+        "date_to": "2022-02-16"
+    },
+    "prev_date_range": {
+        "selected": "previous"
+    },
+    "aggregate": [
+        {
+            "metric": "plan_turnover_complete_percent"
+        },
+        {
+            "metric": "plan_products_qty_complete_percent"
+        },
+        {
+            "metric": "plan_profit_complete_percent"
+        },
+        {
+            "metric": "plan_margin_price_complete_percent"
+        },
+        {
+            "metric": "plan_marga_complete_percent"
+        }
+    ],
+    "group_by": [
+        {
+            "dimension": "shop",
+            "display_fields": [
+                "name"
+            ],
+            "on": "row",
+            "lookups": {}
+        }
+    ],
+    filters: [{dimension: "category", lookups: {include: [5633]}}]
+    "options": {
+        "use_cache": true,
+        "fixed_total": true
+    },
+    "render_options": {
+        "dtype": "table",
+        "key_start": "shop=",
+        "additional_data": {
+            "level": 1,
+            "is_root": true
+        },
+        "clone_data": {
+            "name": "shop_name",
+            "has_children": "shop_has_children"
+        },
+        "additional_column_options": {}
+    }
+}
+</span></code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"previous"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"shop__name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Store #1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_turnover_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.556</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_products_qty_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">21.798</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_profit_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.578</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_margin_price_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">94.227</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_marga_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">95.24</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_root"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shop=1"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"shop__name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Store #2"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_turnover_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.533</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_products_qty_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.395</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_profit_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.399</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_margin_price_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.228</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_marga_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.347</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_root"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shop=2"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shop__name"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shop__name"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shop Name"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_turnover_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_turnover_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"% completed Planned Sales"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_products_qty_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_products_qty_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"% completed Planned Sales Qty"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_profit_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_profit_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"% completed Planned Profit"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_margin_price_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_margin_price_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Planed Margin Price completed percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_marga_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_marga_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Planed Margin completed percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='example-1'>Example 1</h3>
+<p><strong>Sales plan</strong>. We form a sample of stores sorted by category to obtain indicators &quot;% of the plan&quot;. We&#39;ll get the following metrics: <em>% completed Planned Sales</em> (<code>plan_turnover_complete_percent</code>), <em>% completed Planned Sales Qty</em> (<code>plan_products_qty_complete_percent</code>), <em>% completed Planned Profit</em> (<code>plan_profit_complete_percent</code>), <em>Planed Margin Price completed percent</em> (<code>plan_margin_price_complete_percent</code>), <em>Planed Margin completed percent</em> (<code>plan_marga_complete_percent</code>).</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>Example <span class="c">#2</span>
+curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://bi-new.datawiz.io/api/builder/create-table/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer oN8ojLOFEYz4dsagdAHJkHc618xwy0'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'client-id: 313'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Cookie: crisp-client%2Fsession%2F0fedd57b-c655-402e-b6f9-502131085dc9=session_e98342c9-9064-48ab-ad84-d2c33c7048a7'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "date_range": {
+        "selected": "date",
+        "date_from": "2020-01-01",
+        "date_to": "2022-02-16"
+    },
+    "prev_date_range": {
+        "selected": "previous"
+    },
+    "aggregate": [
+        {
+            "metric": "losses_total_price_percent_part"
+        }
+    ],
+    "group_by": [
+        {
+            "dimension": "shop",
+            "display_fields": [
+                "name"
+            ],
+            "on": "row",
+            "lookups": {}
+        }
+    ],
+    "filters": [
+        {
+            "dimension": "category",
+            "lookups": {
+                "include": [
+                    5633
+                ]
+            }
+        }
+    ],
+    "options": {
+        "use_cache": true,
+        "fixed_total": true
+    },
+    "render_options": {
+        "dtype": "table",
+        "key_start": "shop=",
+        "additional_data": {
+            "children": [],
+            "level": 1,
+            "is_root": true
+        },
+        "clone_data": {
+            "name": "shop__name",
+            "has_children": "shop__has_children"
+        },
+        "additional_column_options": {}
+    }
+}
 </span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"previous"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"shop__name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Store #1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"losses_total_price_percent_part"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.559</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_root"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shop=1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Store #1"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"shop__name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Store #2"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"losses_total_price_percent_part"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.527</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_root"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shop=3"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Store #2"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shop__name"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shop__name"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shop Name"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"losses_total_price_percent_part"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"losses_total_price_percent_part"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"% of Write-offs in monetary units"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='example-2'>Example 2</h3>
+<p><strong>Losses</strong>. We form a sample of stores sorted by category - &quot;% of losses&quot;. We&#39;ll get the following metric: % of Write-offs in monetary units (<code>losses_total_price_percent_part</code>).</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>Example <span class="c">#3</span>
+curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://bi-new.datawiz.io/api/builder/create-table/'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer oi1d7vAJMIPFiv2rWT1OlSpCCbA0k2'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'client-id: 313'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "date_range": {
+        "selected": "date",
+        "date_from": "2020-01-01",
+        "date_to": "2022-02-16"
+    },
+    "prev_date_range": {
+        "selected": "prev_last_week"
+    },
+    "aggregate": [
+        {
+            "metric": "plan_turnover_complete_percent"
+        },
+        {
+            "metric": "plan_profit_complete_percent"
+        },
+        {
+            "metric": "losses_total_price_percent_part"
+        }
+    ],
+    "group_by": [
+        {
+            "dimension": "categorical_manager",
+            "display_fields": [
+                "name"
+            ],
+            "on": "row",
+            "lookups": {}
+        }
+    ],
+    "filters": [],
+    "options": {
+        "use_cache": true,
+        "fixed_total": true
+    },
+    "render_options": {
+        "dtype": "table",
+        "key_start": "categorical_manager=",
+        "additional_data": {
+            "level": 1,
+            "is_root": true
+        },
+        "clone_data": {
+            "name": "categorical_manager__name",
+            "has_children": "categorical_manager__has_children"
+        },
+        "additional_column_options": {}
+    }
+}
+</span></code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"previous"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"categorical_manager__name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blake Chloe"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_turnover_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.289</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_profit_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.692</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"losses_total_price_percent_part"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.012</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_root"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"categorical_manager=3"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blake Chloe"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"categorical_manager__name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gillmore Thomas"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_turnover_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.517</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_profit_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.374</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"losses_total_price_percent_part"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.003</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_root"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"categorical_manager=2"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gillmore Thomas"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"categorical_manager__name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Addams David"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_turnover_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.038</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"plan_profit_complete_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.543</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"losses_total_price_percent_part"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.038</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_root"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"categorical_manager=1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Addams David"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"categorical_manager__name"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"categorical_manager__name"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Category manager Name"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_turnover_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_turnover_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"% completed Planned Sales"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_profit_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan_profit_complete_percent"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"% completed Planned Profit"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"losses_total_price_percent_part"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dataIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"losses_total_price_percent_part"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"% of Write-offs in monetary units"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"parent_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"default_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='example-3'>Example 3</h3>
+<p><strong>Categorical Managers</strong>. We form a sample of categorical managers to obtain indicators &quot;% of the plan&quot;. We&#39;ll get the following metrics: <em>% completed Planned Sales</em> (<code>plan_turnover_complete_percent</code>), <em>% completed Planned Profit</em> (<code>plan_profit_complete_percent</code>),    % of Write-offs in monetary units (<code>losses_total_price_percent_part</code>).</p>
+<h1 id='tables-of-keys'>Tables of keys</h1><h3 id='table-of-selected-keys-for-date-range'>Table of selected keys for date range</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Key</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>last_update_date</td>
+<td>Last available date</td>
+</tr>
+<tr>
+<td>penultimate_update_date</td>
+<td>Penultimate available date</td>
+</tr>
+<tr>
+<td>last_7_days</td>
+<td>Last 7 days</td>
+</tr>
+<tr>
+<td>last_30_days</td>
+<td>Last 30 days</td>
+</tr>
+<tr>
+<td>last_90_days</td>
+<td>Last 90 Days</td>
+</tr>
+<tr>
+<td>last_180_days</td>
+<td>Last 180 Days</td>
+</tr>
+<tr>
+<td>last_365_days</td>
+<td>Last year</td>
+</tr>
+<tr>
+<td>week_begin</td>
+<td>From beginning of the week</td>
+</tr>
+<tr>
+<td>month_begin</td>
+<td>From beginning of the month</td>
+</tr>
+<tr>
+<td>quarter_begin</td>
+<td>From beginning of the quarter</td>
+</tr>
+<tr>
+<td>year_begin</td>
+<td>From beginning of the quarter</td>
+</tr>
+<tr>
+<td>prev_week</td>
+<td>Previous week</td>
+</tr>
+<tr>
+<td>prev_month</td>
+<td>Previous month</td>
+</tr>
+<tr>
+<td>prev_quarter</td>
+<td>Previous month</td>
+</tr>
+<tr>
+<td>prev_year</td>
+<td>Previous year</td>
+</tr>
+<tr>
+<td>all_time</td>
+<td>All period</td>
+</tr>
+</tbody></table>
+<h3 id='table-of-selected-keys-for-previous-date-range'>Table of selected keys for previous date range</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>previous</td>
+<td>Previous</td>
+</tr>
+<tr>
+<td>prev_last_week</td>
+<td>Previous equal week</td>
+</tr>
+<tr>
+<td>prev_last_month</td>
+<td>Previous equal month</td>
+</tr>
+<tr>
+<td>prev_last_quarter</td>
+<td>Previous equal quarter</td>
+</tr>
+<tr>
+<td>prev_last_year</td>
+<td>Previous equal year</td>
+</tr>
+</tbody></table>
+<h3 id='table-of-dimension-keys'>Table of dimension keys</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>shops</td>
+<td>Stores</td>
+</tr>
+<tr>
+<td>shop_group</td>
+<td>Store Groups</td>
+</tr>
+<tr>
+<td>shop_marker</td>
+<td>Shop Markers</td>
+</tr>
+<tr>
+<td>category</td>
+<td>Categories</td>
+</tr>
+<tr>
+<td>product</td>
+<td>Products</td>
+</tr>
+<tr>
+<td>producer</td>
+<td>Producers</td>
+</tr>
+<tr>
+<td>brand</td>
+<td>Brands</td>
+</tr>
+<tr>
+<td>product_marker</td>
+<td>Product markers</td>
+</tr>
+<tr>
+<td>assortment_type</td>
+<td>Assortment types</td>
+</tr>
+<tr>
+<td>supplier</td>
+<td>Suppliers</td>
+</tr>
+<tr>
+<td>bonus_type</td>
+<td>Bonus Types</td>
+</tr>
+<tr>
+<td>categorical_manager</td>
+<td>Categorical managers</td>
+</tr>
+<tr>
+<td>day_month_year</td>
+<td>Day / Month / Year</td>
+</tr>
+<tr>
+<td>month_year</td>
+<td>Month / Year</td>
+</tr>
+<tr>
+<td>quarter</td>
+<td>Quarter</td>
+</tr>
+<tr>
+<td>month</td>
+<td>Month</td>
+</tr>
+<tr>
+<td>week</td>
+<td>Week</td>
+</tr>
+<tr>
+<td>week_day</td>
+<td>Day of the week</td>
+</tr>
+<tr>
+<td>hour</td>
+<td>Hours</td>
+</tr>
+<tr>
+<td>terminal</td>
+<td>Terminals</td>
+</tr>
+<tr>
+<td>cashier</td>
+<td>Cashiers</td>
+</tr>
+<tr>
+<td>receipt_marker</td>
+<td>Receipt Markers</td>
+</tr>
+<tr>
+<td>promo</td>
+<td>Promos</td>
+</tr>
+<tr>
+<td>promo_type</td>
+<td>Promo type</td>
+</tr>
+<tr>
+<td>loyalty</td>
+<td>Clients LP</td>
+</tr>
+<tr>
+<td>loyalty_format</td>
+<td>Types of PL clients</td>
+</tr>
+<tr>
+<td>loyalty_group</td>
+<td>Clients groups LP</td>
+</tr>
+<tr>
+<td>loss_type</td>
+<td>Types of Write-off (LossType)</td>
+</tr>
+<tr>
+<td>price_type</td>
+<td>Price type</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
@@ -531,7 +1287,7 @@ Remember — a happy kitten is an authenticated kitten!
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
 </aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>The datawiz.io API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -556,26 +1312,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <td>Not Found -- The specified kitten could not be found.</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
 <td>500</td>
 <td>Internal Server Error -- We had a problem with our server. Try again later.</td>
 </tr>
@@ -589,9 +1325,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
