@@ -72,7 +72,7 @@ In the future we will use the obtained `token_type` and `access_token` to access
 
 ### HTTP Request
 
-`POST https://builder.datawiz.io/api/builder/create-table/`
+`POST https://api-new.datawiz.io/api/builder/create-table/`
 
 ### HTTP header
 `Authorization: <token_type> <access_token>`
@@ -610,7 +610,7 @@ prev_last_year | Previous equal year
 
 Key       | Description
 --------- | -----------
-shops |	Stores
+shop |	Stores
 shop_group | Store Groups
 shop_marker |	Shop Markers
 category | Categories
