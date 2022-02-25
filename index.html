@@ -362,6 +362,20 @@
               </ul>
           </li>
           <li>
+            <a href="#getting-data-from-reports" class="toc-h1 toc-link" data-title="Getting data from reports">Getting data from reports</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-3" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#http-header-2" class="toc-h2 toc-link" data-title="HTTP header">HTTP header</a>
+                  </li>
+                  <li>
+                    <a href="#query-parameters-3" class="toc-h2 toc-link" data-title="Query Parameters">Query Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#examples-of-getting-a-date" class="toc-h1 toc-link" data-title="Examples of getting a date">Examples of getting a date</a>
               <ul class="toc-list-h2">
                   <li>
@@ -388,6 +402,9 @@
                     <a href="#table-of-dimension-keys" class="toc-h2 toc-link" data-title="Table of dimension keys">Table of dimension keys</a>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#table-of-reports-and-report-widgets" class="toc-h1 toc-link" data-title="Table of reports and report widgets">Table of reports and report widgets</a>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
@@ -656,6 +673,89 @@ Depending on what you want to get - a table or a chart - the required keys will 
 <td>Shows the path of the tree roll down. For example: &quot;shop=1&amp;category=6779&amp;product=&quot;</td>
 </tr>
 </tbody></table>
+<h1 id='getting-data-from-reports'>Getting data from reports</h1><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST : https://bi-new.datawiz.io/api/report/reports/&lt;report_slug&gt;/widgets/&lt;widget_slug&gt;/data/</code></p>
+
+<aside class="notice">
+<code>&lt;report_slug&gt;</code> is the mark of a specific report.
+<code>&lt;widget_slug&gt;</code> is the mark of a specific report widget (visualization).
+</aside>
+
+<p><a href="/api-doc/#table-of-reports-and-report-widgets">Table of reports and report widgets</a>.</p>
+<h3 id='http-header-2'>HTTP header</h3>
+<p><code>Authorization: &lt;token_type&gt; &lt;access_token&gt;</code></p>
+
+<p><code>client-id: &lt;client_id&gt;</code></p>
+
+<p><code>Content-Type: application/json</code></p>
+
+<aside class="notice"> Not to be confused with <code>&lt;client_id&gt;</code> for authorization. This  <code>&lt;client-id&gt;</code> is number, its value must be provided to you by the administrator.</aside>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>{from: &quot;&lt;<code>year_number</code>&gt;-&lt;<code>month_number</code>&gt;-&lt;<code>day_number</code>&gt;&quot;, to: &quot;&lt;<code>year_number</code>&gt;-&lt;<code>month_number</code>&gt;-&lt;<code>day_number</code>&gt;&quot;}</td>
+</tr>
+<tr>
+<td>prev_date_range</td>
+<td>{from: &quot;&lt;<code>year_number</code>&gt;-&lt;<code>month_number</code>&gt;-&lt;<code>day_number</code>&gt;&quot;, to: &quot;&lt;<code>year_number</code>&gt;-&lt;<code>month_number</code>&gt;-&lt;<code>day_number</code>&gt;&quot;}</td>
+</tr>
+<tr>
+<td>metrics</td>
+<td>List of String with metric key. For example: [ &quot;turnover&quot; ]</td>
+</tr>
+</tbody></table>
+
+<p>Each report has a number of filters that can be specified in the parameters when getting data from the report. Some of them will be listed in the following table.</p>
+
+<aside class="warning"> Warning: only some reports support next filters!</aside>
+
+<table><thead>
+<tr>
+<th>Filter key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>shops</td>
+<td>List of shop ids</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>List of category ids</td>
+</tr>
+<tr>
+<td>products</td>
+<td>List of product ids</td>
+</tr>
+<tr>
+<td>group_by_level</td>
+<td>Displays the report at a certain level. The level is indicated dimension key, for example: &quot;category&quot;.</td>
+</tr>
+<tr>
+<td>product_marker</td>
+<td>List of product marker ids</td>
+</tr>
+<tr>
+<td>receipt_marker</td>
+<td>List of receipt marker ids</td>
+</tr>
+<tr>
+<td>week_day</td>
+<td>list with numbers of days in the week</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>String of interval key. Possible values: day_month_year, week, month</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">Contact your administrator for detailed information on the report.</aside>
 <h1 id='examples-of-getting-a-date'>Examples of getting a date</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>Example 1
 curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://bi-new.datawiz.io/api/builder/create-table/'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Bearer oi1d7vAJMIPFiv2rWT1OlSpCCbA0k2'</span> <span class="se">\</span>
@@ -1280,6 +1380,406 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <tr>
 <td>price_type</td>
 <td>Price type</td>
+</tr>
+</tbody></table>
+<h1 id='table-of-reports-and-report-widgets'>Table of reports and report widgets</h1>
+<table><thead>
+<tr>
+<th>Report slug</th>
+<th>Report</th>
+<th>Report widgets slug</th>
+<th>Report widgets</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>shops-sales</td>
+<td>Shop Sales</td>
+<td>table</td>
+<td>Report</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>treemap</td>
+<td>Sales Structure</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>treemap-stock</td>
+<td></td>
+</tr>
+<tr>
+<td>category-sales</td>
+<td>Category Sales</td>
+<td>table</td>
+<td>Report</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>treemap</td>
+<td>Sales Structure</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>treemap-stock</td>
+<td></td>
+</tr>
+<tr>
+<td>brands-sales</td>
+<td>Brand Sales</td>
+<td>table</td>
+<td>Report</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>treemap</td>
+<td>Sales Structure</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>treemap-stock</td>
+<td></td>
+</tr>
+<tr>
+<td>products-sales</td>
+<td>Product Sales</td>
+<td>table</td>
+<td>Report</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>cumulative-curve</td>
+<td>Cumulative Curve</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>abc</td>
+<td>ABC</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>category-abc</td>
+<td>ABC by categories</td>
+</tr>
+<tr>
+<td>suppliers-analysis</td>
+<td>Supplier Analysis</td>
+<td>table</td>
+<td>Report</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>treemap</td>
+<td>Sales Structure</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>treemap-stock</td>
+<td></td>
+</tr>
+<tr>
+<td>producers-analysis</td>
+<td>Producers Analysis</td>
+<td>table</td>
+<td>Report</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>treemap</td>
+<td>Sales Structure</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>treemap-stock</td>
+<td></td>
+</tr>
+<tr>
+<td>markers-comparative</td>
+<td>Markers Comparison</td>
+<td>table</td>
+<td></td>
+</tr>
+<tr>
+<td>categorical-managers</td>
+<td>Category managers</td>
+<td>table</td>
+<td></td>
+</tr>
+<tr>
+<td>receipt-analysis</td>
+<td>Receipts</td>
+<td>table</td>
+<td></td>
+</tr>
+<tr>
+<td>stock-control</td>
+<td>Stock Monitoring</td>
+<td>table</td>
+<td></td>
+</tr>
+<tr>
+<td>out-of-stock</td>
+<td>Prediction of OoS</td>
+<td>table</td>
+<td></td>
+</tr>
+<tr>
+<td>products-decommissioning</td>
+<td>Unsaleable Products</td>
+<td>table</td>
+<td></td>
+</tr>
+<tr>
+<td>recalculation-products</td>
+<td>Products for adjustment</td>
+<td>table</td>
+<td></td>
+</tr>
+<tr>
+<td>terminals-traffic</td>
+<td>POS-terminal Traffic</td>
+<td>table</td>
+<td></td>
+</tr>
+<tr>
+<td>staff-efficiency</td>
+<td>Effectiveness of cashiers</td>
+<td>table</td>
+<td></td>
+</tr>
+<tr>
+<td>innovation-products</td>
+<td>New SKU</td>
+<td>table</td>
+<td></td>
+</tr>
+<tr>
+<td>baskets-analysis</td>
+<td>Basket Analysis</td>
+<td>table</td>
+<td>2 dimensions</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>3 dimensions</td>
+</tr>
+<tr>
+<td>quadrant-analysis</td>
+<td>Quadrant Analysis</td>
+<td>table</td>
+<td></td>
+</tr>
+<tr>
+<td>movement-products</td>
+<td>Products movement</td>
+<td>document</td>
+<td></td>
+</tr>
+<tr>
+<td>predict-plan</td>
+<td>Sales Plans</td>
+<td>table-by-shops</td>
+<td>Plan by shops</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>table-by-categories</td>
+<td>Plan by categories</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>table-by-categorical-managers</td>
+<td>Plan by category managers</td>
+</tr>
+<tr>
+<td>promotion-analysis</td>
+<td>Promotion Analysis</td>
+<td>table</td>
+<td>Report</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>chart</td>
+<td>Promo Comparison</td>
+</tr>
+<tr>
+<td>effectiveness-loyalty-program</td>
+<td>Effectiveness of Loyalty Program</td>
+<td>table</td>
+<td>Report</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>chart</td>
+<td>Dynamics of LP</td>
+</tr>
+<tr>
+<td>hourly-analysis</td>
+<td>24-Hour Analysis</td>
+<td>chart</td>
+<td>Hour Trend</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>table</td>
+<td>24-Hour Analysis</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>click-detail-table</td>
+<td>Hour Trend table after click</td>
+</tr>
+<tr>
+<td>rfm-analysis</td>
+<td>RFM - analysis</td>
+<td>chart</td>
+<td>Clients groups</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>loyalty-anomaly-table</td>
+<td>Anomaly clients</td>
+</tr>
+<tr>
+<td>loyalty-statistics</td>
+<td>Statistic of Loyalty Program</td>
+<td>loyalty-dynamic</td>
+<td>Dynamics of LP</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>cumulative-curve</td>
+<td>Cumulative curve</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>outflow-clients</td>
+<td>Clients Churn</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>sales-funnel</td>
+<td>Sales Funnel</td>
+</tr>
+<tr>
+<td>change-in-sales</td>
+<td>Sales Change</td>
+<td>comparison-chart</td>
+<td></td>
+</tr>
+<tr>
+<td>loyalty-segmentation</td>
+<td>Customer Loyalty Segmentation</td>
+<td>loyalty-clients-table</td>
+<td>Clients list</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>loyalty-purchases-table</td>
+<td>Clients purchases</td>
+</tr>
+<tr>
+<td>comparative-dynamics</td>
+<td>Comparative Dynamic</td>
+<td>curr-chart</td>
+<td>Selected period</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>prev-chart</td>
+<td>Previous period</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>diff-chart</td>
+<td>Change in absolute units</td>
+</tr>
+<tr>
+<td>shop-card</td>
+<td>Shop Card</td>
+<td>info</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>cards</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>chart</td>
+<td>Shop Dynamics</td>
+</tr>
+<tr>
+<td>category-card</td>
+<td>Category Card</td>
+<td>price-interval-chart</td>
+<td>Products price distribution</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>cards</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>chart</td>
+<td>Category Dynamics</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>sku</td>
+<td>Category fullness</td>
+</tr>
+<tr>
+<td>product-card</td>
+<td>Product Card</td>
+<td>info</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>cards</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>chart</td>
+<td>Product Dynamics</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
