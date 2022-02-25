@@ -157,6 +157,53 @@ clone_data | {"name": "`dimension`__ name", "has_children": "`dimension`__has_ch
 dtype | "`dtype_key`" | String of dtype key. Indicates the type of visualization, possible dtype_key: `table`, `chart`.
 key_start | " " | Shows the path of the tree roll down. For example: "shop=1&category=6779&product="
 
+# Getting data from reports
+
+### HTTP Request
+
+`POST : https://bi-new.datawiz.io/api/report/reports/<report_slug>/widgets/<widget_slug>/data/`
+
+<aside class="notice">
+<code>&lt;report_slug&gt;</code> is the mark of a specific report.
+<code>&lt;widget_slug&gt;</code> is the mark of a specific report widget (visualization).
+</aside>
+[Table of reports and report widgets](/api-doc/#table-of-reports-and-report-widgets).
+
+### HTTP header
+`Authorization: <token_type> <access_token>`
+
+`client-id: <client_id>`
+
+`Content-Type: application/json`
+
+<aside class="notice"> Not to be confused with <code>&lt;client_id&gt;</code> for authorization. This  <code>&lt;client-id&gt;</code> is number, its value must be provided to you by the administrator.</aside>
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+date_range | {from: "<`year_number`>-<`month_number`>-<`day_number`>", to: "<`year_number`>-<`month_number`>-<`day_number`>"}
+prev_date_range| {from: "<`year_number`>-<`month_number`>-<`day_number`>", to: "<`year_number`>-<`month_number`>-<`day_number`>"}
+metrics | List of String with metric key. For example: [ "turnover" ]
+
+Each report has a number of filters that can be specified in the parameters when getting data from the report. Some of them will be listed in the following table.
+
+<aside class="warning"> Warning: only some reports support next filters!</aside>
+
+Filter key | Description
+---------  | -----------
+shops      | List of shop ids
+categories | List of category ids
+products   | List of product ids
+group_by_level | Displays the report at a certain level. The level is indicated dimension key, for example: "category".
+product_marker| List of product marker ids
+receipt_marker | List of receipt marker ids
+week_day | list with numbers of days in the week
+interval | String of interval key. Possible values: day_month_year, week, month
+
+
+<aside class="notice">Contact your administrator for detailed information on the report.</aside>
+
 # Examples of getting a date
 
 ```shell
@@ -639,3 +686,72 @@ loyalty_format | Types of PL clients
 loyalty_group |	Clients groups LP
 loss_type |	Types of Write-off (LossType)
 price_type | 	Price type
+
+# Table of reports and report widgets
+Report slug     | Report      | Report widgets slug| Report widgets |
+--------------- | ----------- | ------------------ | -------------- |
+shops-sales     | Shop Sales  | table              | Report         |
+                |             | treemap            | Sales Structure|
+                |             |  treemap-stock     |                |
+category-sales  | Category Sales | table           | Report         |
+                |             | treemap            | Sales Structure|
+                |             |  treemap-stock     |                |
+brands-sales    | Brand Sales | table              | Report         |
+                |             | treemap            | Sales Structure|
+                |             |  treemap-stock     |                |
+products-sales  |Product Sales| table              |Report          |
+                |             |cumulative-curve    |Cumulative Curve|
+                |             |abc                 | ABC            |
+                |             |category-abc        |ABC by categories|
+suppliers-analysis | Supplier Analysis | table     | Report         |
+                |             | treemap            | Sales Structure|
+                |             |  treemap-stock     |                |
+producers-analysis | Producers Analysis | table    | Report         |
+                |             | treemap            | Sales Structure|
+                |             |  treemap-stock     |                |
+markers-comparative |Markers Comparison | table    |                |
+categorical-managers |Category managers | table    |                |
+receipt-analysis |Receipts    | table              |                |
+stock-control   |Stock Monitoring | table          |                |
+out-of-stock    |Prediction of OoS | table         |                |
+products-decommissioning |Unsaleable Products | table |             |
+recalculation-products |Products for adjustment | table |           |
+terminals-traffic |POS-terminal Traffic | table    |                |
+staff-efficiency |Effectiveness of cashiers | table |               |
+innovation-products |New SKU   | table             |                |
+baskets-analysis |Basket Analysis | table          |2 dimensions    |
+                |             |                    |3 dimensions    |
+quadrant-analysis |Quadrant Analysis | table       |                |
+movement-products |Products movement | document    |                |
+predict-plan    | Sales Plans | table-by-shops     | Plan by shops  |
+                |             |table-by-categories | Plan by categories |
+                |             |table-by-categorical-managers | Plan by category managers|
+promotion-analysis| Promotion Analysis | table     | Report         |
+                  |                    | chart     | Promo Comparison |
+effectiveness-loyalty-program|Effectiveness of Loyalty Program | table | Report  |
+                  |                    | chart     | Dynamics of LP |
+hourly-analysis   | 24-Hour Analysis   | chart     | Hour Trend       |
+                  |                    | table     | 24-Hour Analysis |
+                  |                    |click-detail-table|Hour Trend table after click|
+rfm-analysis      | RFM - analysis     | chart     | Clients groups   |
+                  |                    |loyalty-anomaly-table | Anomaly clients|
+loyalty-statistics | Statistic of Loyalty Program | loyalty-dynamic |Dynamics of LP |
+                   |                              | cumulative-curve|Cumulative curve |
+                   |                              |outflow-clients  |Clients Churn |
+                   |                              |sales-funnel     |Sales Funnel |
+change-in-sales | Sales Change        | comparison-chart |           |
+loyalty-segmentation| Customer Loyalty Segmentation | loyalty-clients-table  |Clients list  |
+                    |                               | loyalty-purchases-table| Clients purchases |
+comparative-dynamics| Comparative Dynamic | curr-chart |Selected period  | 
+                    |                     | prev-chart |Previous period  |
+                    |                     | diff-chart | Change in absolute units |
+shop-card     | Shop Card | info   |                   |
+              |           | cards  |                   |
+              |           |chart   | Shop Dynamics     |                  
+category-card | Category Card | price-interval-chart   | Products price distribution|
+              |               |cards |
+              |               |chart |Category Dynamics|
+              |               |sku   |Category fullness|
+product-card  | Product Card  | info |                   |
+              |               |cards |                   |
+              |               |chart | Product Dynamics  |
